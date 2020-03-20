@@ -111,13 +111,13 @@ def over?
   end
 end
 
-def winner (board)
+def winner
   index = []
-  index = won?(board)
+  index = won?
   if index == false
     return nil
   else
-    if board[index[0]] == "X"
+    if @board[index[0]] == "X"
       return "X"
     else
       return "O"
@@ -125,9 +125,9 @@ def winner (board)
   end
 end
 
-def play(board)
-  until over?(board) == true
-    turn(board)
+def play
+  until over? == true
+    turn
   end
 
   if won?(board)
